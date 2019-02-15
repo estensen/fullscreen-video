@@ -20,6 +20,7 @@ iframe {
   /* optional */
   width: 100%;
   height: 100%;
+  pointer-events: none;
 }
 </style>
 </head>
@@ -45,6 +46,7 @@ iframe {
           height: '1920',
           width: '1080',
           videoId: 'n6187fG49r4',
+	  playerVars: { 'controls': 0, 'loop': 1 },
           events: {
             'onReady': onPlayerReady,
           }
@@ -53,7 +55,7 @@ iframe {
 
       // 4. The API will call this function when the video player is ready.
       function onPlayerReady(event) {
-	event.target.setVolume(0);
+	event.target.mute();
         event.target.playVideo();
       }
     </script>
